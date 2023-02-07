@@ -1,5 +1,5 @@
 
-def img2ascii(img_data: list[list[int]], black: str = '#', white: str = '.') -> str:
+def img2ascii(img_data, black = '#', white = '.') -> str:
     '''
     >>> img = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
@@ -36,8 +36,8 @@ def img2ascii(img_data: list[list[int]], black: str = '#', white: str = '.') -> 
                 str_ln += white
             elif pixel == 1:
                 str_ln += black
-        final_img += f'{str_ln}+\n'
-    return final_img
+        final_img += f'{str_ln}\n'
+    return ''.join([white if pixel == 0 else black for line in img_data for pixel in line])
 
 img = [
     [0, 0, 0, 0, 0, 0, 0, 0, 0, 0],
