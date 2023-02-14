@@ -49,10 +49,10 @@ def erosion(img, n):
             for lineno, line in enumerate(final_img):
                 for pixelno, pixel in enumerate(line):
                     if (
-                        lineno - 1 >= 0
-                        and lineno + 1 <= len(line) - 1
+                        (lineno - 1 >= 0
+                        and lineno + 1 <= len(final_img) - 1
                         and pixelno - 1 >= 0
-                        and pixelno + 1 <= len(line) - 1
+                        and pixelno + 1 <= len(line) - 1)
                         and (
                             img[lineno - 1][pixelno] == 0
                             or img[lineno + 1][pixelno] == 0
